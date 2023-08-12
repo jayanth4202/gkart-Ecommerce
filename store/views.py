@@ -54,6 +54,8 @@ def product_detail(request , category_slug, product_slug):
 
 
 def search(request):
+    products = Product.objects.all()
+    product_count = products.count()
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']
         if keyword:
